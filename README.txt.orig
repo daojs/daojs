@@ -1,0 +1,11 @@
+Test my first git project
+hello world
+from branchA
+
+<<<<<<< HEAD
+add user.name = master
+add user.email = testmaster@gmail.com
+=======
+add user.name=branchA
+add user.email=brancha@gmail.com
+>>>>>>> branchA
