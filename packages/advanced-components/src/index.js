@@ -6,10 +6,11 @@ import Comp4 from './components/comp4';
 import Comp5 from './components/comp5';
 import Comp6 from './components/comp6';
 import Comp7 from './components/comp7';
+import Table from './components/Table';
 
 export {
   TextChartCard,
-
+  Table,
   Comp1,
   Comp2,
   Comp3,

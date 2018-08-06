@@ -6,7 +6,12 @@ export default [
     category: 'advanced',
     description: 'Show a text together with chart',
   },
-
+  {
+    name: 'Table',
+    key: 'Table',
+    category: 'advanced',
+    description: '',
+  },
   // cards
   {
     name: '圆环图卡片',
