@@ -7,10 +7,12 @@ import Comp5 from './components/comp5';
 import Comp6 from './components/comp6';
 import Comp7 from './components/comp7';
 import Table from './components/Table';
+import LinkedChartPair from './components/LinkedChartPair';
 
 export {
   TextChartCard,
   Table,
+  LinkedChartPair,
   Comp1,
   Comp2,
   Comp3,
