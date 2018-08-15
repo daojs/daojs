@@ -61,4 +61,10 @@ export default [
     category: 'card',
     description: '',
   },
+  {
+    name: 'SelectorChartCard',
+    key: 'SelectorChartCard',
+    category: 'card',
+    description: '',
+  },
 ];

@@ -8,11 +8,13 @@ import Comp6 from './components/comp6';
 import Comp7 from './components/comp7';
 import Table from './components/Table';
 import LinkedChartPair from './components/LinkedChartPair';
+import SelectorChartCard from './components/SelectorChartCard';
 
 export {
   TextChartCard,
   Table,
   LinkedChartPair,
+  SelectorChartCard,
   Comp1,
   Comp2,
   Comp3,
