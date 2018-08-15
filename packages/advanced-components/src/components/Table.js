@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Icon } from 'antd';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
@@ -36,17 +36,8 @@ export default class Table extends PureComponent {
     const { cells } = this.props;
     const newCells = _.map(cells, (item, key) => (
       <Col span={this.state.width}>
-        <div
-          onClick={this.toggleExpanded}
-          data-id={key}
-          onKeyPress={(e) => {
-            if (e.keyCode === 13) {
-              this.toggleExpanded();
-            }
-          }}
-          tabIndex="0"
-          role="button"
-        >
+        <Icon type={this.state.allState ? 'arrows-alt' : 'shrink'} onClick={this.toggleExpanded} data-id={key} style={{ fontSize: 16, color: '#08c' }} />
+        <div>
           {item()}
         </div>
       </Col>

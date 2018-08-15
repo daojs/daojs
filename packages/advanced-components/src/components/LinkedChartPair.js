@@ -73,7 +73,7 @@ export default class LinkedChartPair extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      dimension: '',
+      dimension: null,
     };
   }
   render() {
@@ -86,13 +86,14 @@ export default class LinkedChartPair extends PureComponent {
       [chart0.dimension]: item,
       [chart0.metric]: source0[item].length,
     }));
-    const source1 = _.groupBy(_.filter(
-      source,
-      [chart0.dimension,
-        _.isNumber(source[0][chart0.dimension]) ?
-          _.toNumber(this.state.dimension) : this.state.dimension,
-      ],
-    ), chart1.dimension);
+    const source1 = this.state.dimension !== null ?
+      _.groupBy(_.filter(
+        source,
+        [chart0.dimension,
+          _.isNumber(source[0][chart0.dimension]) ?
+            _.toNumber(this.state.dimension) : this.state.dimension,
+        ],
+      ), chart1.dimension) : _.groupBy(source, chart1.dimension);
     const dimension1 = Object.getOwnPropertyNames(source1);
     const finalSource1 = _.map(dimension1, item => ({
       [chart1.dimension]: item,
