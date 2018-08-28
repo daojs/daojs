@@ -42,9 +42,7 @@ export default class Table extends PureComponent {
         </div>
       </Col>
     ));
-    const finalCells = _.map(newCells, (item, key) => (
-      <ShowChart flag={this.state.isExpanded[key] || this.state.allState} chart={item} />
-    ));
+    const finalCells = newCells;
     return (
       <div>
         <Row>
