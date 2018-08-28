@@ -3,10 +3,6 @@ import { Row, Col, Icon } from 'antd';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-function ShowChart(props) {
-  if (!props.flag) return null;
-  return props.chart;
-}
 export default class Table extends PureComponent {
   static propTypes = {
     col: PropTypes.number.isRequired,
@@ -15,7 +11,6 @@ export default class Table extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      isExpanded: _.times(this.props.cells.length, _.constant(false)),
       allState: true,
       width: 24 / this.props.col,
     };
