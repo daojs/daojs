@@ -276,4 +276,10 @@ export default [
     description: '',
   },
   // End antd
+  {
+    name: 'TimeLine',
+    key: 'timeline',
+    category: 'chart',
+    description: '',
+  },
 ];

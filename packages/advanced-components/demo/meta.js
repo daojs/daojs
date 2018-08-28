@@ -62,8 +62,8 @@ export default [
     description: '',
   },
   {
-    name: 'SelectorChartCard',
-    key: 'SelectorChartCard',
+    name: 'SelectableCard',
+    key: 'SelectableCard',
     category: 'card',
     description: '',
   },

@@ -54,13 +54,13 @@ const selectorTypeDictionary = {
   multiTab: buildMultiTab,
 };
 
-export default class SelectorChartCard extends PureComponent {
+export default class SelectableCard extends PureComponent {
   static propTypes = {
-    type: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-    enums: PropTypes.arrayOf(PropTypes.string).isRequired,
+    selectorType: PropTypes.string.isRequired,
+    selectorLabel: PropTypes.string.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired,
     defaultValue: PropTypes.arrayOf(PropTypes.string).isRequired,
-    buildChart: PropTypes.func.isRequired,
+    renderContent: PropTypes.func.isRequired,
   }
   constructor(props) {
     super(props);
@@ -76,23 +76,23 @@ export default class SelectorChartCard extends PureComponent {
   }
   render() {
     const {
-      type,
-      label,
-      enums,
-      buildChart,
+      selectorType,
+      selectorLabel,
+      options,
+      renderContent,
       defaultValue,
     } = this.props;
     return (
       <div>
         <div>
-          {selectorTypeDictionary[type]({
-            label,
-            enums,
+          {selectorTypeDictionary[selectorType]({
+            label: selectorLabel,
+            enums: options,
             defaultValue,
             currentValue: this.state.value,
             update: this.update,
           })}
-          {buildChart(_.isObject(this.state.value) ? this.state.value : [this.state.value])}
+          {renderContent(_.isObject(this.state.value) ? this.state.value : [this.state.value])}
         </div>
       </div>
     );

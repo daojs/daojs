@@ -60,7 +60,12 @@ import MiniTable from './components/mini-table';
 import GridLayout from './components/layouts/grid-layout';
 import NColumnsLayout from './components/layouts/n-columns-layout';
 
+// TimeLine
+import TimeLine from './components/timeline';
+
 export default {
+  // TimeLine
+  TimeLine,
   TimeSeries,
   FormInput,
   FormField,

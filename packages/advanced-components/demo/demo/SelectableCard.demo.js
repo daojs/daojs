@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { SelectorChartCard } from '@daojs/advanced-components/src/index';
+import { SelectableCard } from '@daojs/advanced-components/src/index';
 import builtinComponents from '@daojs/builtin-components/src/index';
 import data from './data.demo';
 
@@ -10,17 +10,17 @@ const {
 
 // demo0 singleTab with Donut Chart
 const selector0 = {
-  type: 'singleTab',
-  label: 'dimension',
-  enums: ['age', 'gender', 'branchName'],
+  selectorType: 'singleTab',
+  selectorLabel: 'dimension',
+  options: ['age', 'gender', 'branchName'],
   defaultValue: ['age'],
 };
 const demo0Metric = '销量';
-const buildDemo0 = (selectedEnums) => {
-  const source = _.groupBy(data, selectedEnums[0]);
+const buildDemo0 = (selectedOptions) => {
+  const source = _.groupBy(data, selectedOptions[0]);
   const dimension = Object.getOwnPropertyNames(source);
   const finalSource = _.map(dimension, item => ({
-    [selectedEnums[0]]: item,
+    [selectedOptions[0]]: item,
     [demo0Metric]: source[item].length,
   }));
   return (<Donut
@@ -38,14 +38,14 @@ const metricFuncDictionary = {
 
 // demo1 singleTab with Line chart
 const selector1 = {
-  type: 'singleTab',
-  label: 'age',
-  enums: ['ave', 'max', 'min', 'num'],
+  selectorType: 'singleTab',
+  selectorLabel: 'age',
+  options: ['ave', 'max', 'min', 'num'],
   defaultValue: ['ave'],
 };
 const demo1Dimension = 'branchName';
 const demo1Metric = 'age';
-const buildDemo1 = (selectedEnums) => {
+const buildDemo1 = (selectedOptions) => {
   const source = _.groupBy(data, demo1Dimension);
   const dimension = Object.getOwnPropertyNames(source);
   const finalSource = _.map(dimension, item => ({
@@ -58,20 +58,20 @@ const buildDemo1 = (selectedEnums) => {
   return (<Line
     source={finalSource}
     axisDimensions={[demo1Dimension]}
-    metricDimensions={selectedEnums}
+    metricDimensions={selectedOptions}
   />);
 };
 
 // demo2 multiTab with Bar chart
 const selector2 = {
-  type: 'multiTab',
-  label: 'balance',
-  enums: ['ave', 'max', 'min', 'num', 'sum'],
+  selectorType: 'multiTab',
+  selectorLabel: 'balance',
+  options: ['ave', 'max', 'min', 'num', 'sum'],
   defaultValue: ['ave', 'max'],
 };
 const demo2Dimension = 'branchName';
 const demo2Metric = 'age';
-const buildDemo2 = (selectedEnums) => {
+const buildDemo2 = (selectedOptions) => {
   const source = _.groupBy(data, demo2Dimension);
   const dimension = Object.getOwnPropertyNames(source);
   const finalSource = _.map(dimension, item => ({
@@ -85,15 +85,15 @@ const buildDemo2 = (selectedEnums) => {
   return (<Bar
     source={finalSource}
     axisDimensions={[demo2Dimension]}
-    metricDimensions={selectedEnums}
+    metricDimensions={selectedOptions}
   />);
 };
 export default function SelectorChartCardDemo() {
   return (
     <div>
-      <SelectorChartCard buildChart={buildDemo0} {...selector0} />
-      <SelectorChartCard buildChart={buildDemo1} {...selector1} />
-      <SelectorChartCard buildChart={buildDemo2} {...selector2} />
+      <SelectableCard renderContent={buildDemo0} {...selector0} />
+      <SelectableCard renderContent={buildDemo1} {...selector1} />
+      <SelectableCard renderContent={buildDemo2} {...selector2} />
     </div>
   );
 }
