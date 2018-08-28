@@ -21,7 +21,7 @@ export default class Table extends PureComponent {
     };
     this.toggleExpanded = this.toggleExpanded.bind(this);
   }
-  toggleExpanded(e) {
+  /* toggleExpanded(e) {
     const { id } = e.currentTarget.dataset;
     this.setState(prevState => ({
       allState: !prevState.allState,
@@ -31,7 +31,7 @@ export default class Table extends PureComponent {
         key.toString() === id.toString() ? !item : item
       )),
     }));
-  }
+  } */
   render() {
     const { cells } = this.props;
     const newCells = _.map(cells, (item, key) => (
