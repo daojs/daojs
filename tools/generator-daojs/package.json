@@ -14,9 +14,11 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "babel-jest": "^23.4.2",
     "coveralls": "^3.0.0",
+    "enzyme": "^3.5.0",
     "eslint": "^4.19.1",
-    "jest": "^22.0.6",
+    "jest": "^23.5.0",
     "lint-staged": "^6.1.1",
     "yeoman-assert": "^3.1.0",
     "yeoman-test": "^1.7.0"
@@ -26,6 +28,8 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
+    "enzyme": "^3.5.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint-plugin-lodash": "^2.7.0",
     "eslint-plugin-no-loops": "^0.3.0",
     "inquirer-npm-name": "^3.0.0",
