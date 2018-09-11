@@ -35,15 +35,15 @@ export default class Table extends PureComponent {
   render() {
     const { cells } = this.props;
     const newCells = _.map(cells, (item, key) => (
-      <Col span={this.state.width}>
-        <Icon type={this.state.allState ? 'arrows-alt' : 'shrink'} onClick={this.toggleExpanded} data-id={key} style={{ fontSize: 16, color: '#08c' }} />
+      <Col key={key} span={this.state.width}>
+        <Icon key={key} type={this.state.allState ? 'arrows-alt' : 'shrink'} onClick={this.toggleExpanded} data-id={key} style={{ fontSize: 16, color: '#08c' }} />
         <div>
           {item()}
         </div>
       </Col>
     ));
     const finalCells = _.map(newCells, (item, key) => (
-      <ShowChart flag={this.state.isExpanded[key] || this.state.allState} chart={item} />
+      <ShowChart key={key} flag={this.state.isExpanded[key] || this.state.allState} chart={item} />
     ));
     return (
       <div>
