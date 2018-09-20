@@ -10,6 +10,7 @@ import {
   branch,
   renderNothing,
   withProps,
+  setDisplayName,
 } from 'recompose';
 
 const fromRenderProps = (
@@ -108,6 +109,7 @@ const propsMapper = (props) => {
 };
 
 const enhance = compose(
+  setDisplayName('AtlasChart'),
   setPropTypes(propTypes),
   defaultProps(atlasChartDefaultProps),
   renderNothingIfNoSource(({ source }) => _.isNil(source) || _.isEmpty(source)),

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { compose, withProps, setPropTypes, defaultProps } from 'recompose';
+import { compose, withProps, setPropTypes, defaultProps, setDisplayName } from 'recompose';
 import PropTypes from 'prop-types';
 
 import AtlasChart from './atlas-chart';
@@ -34,6 +34,7 @@ const propsTransformer = props => ({
 });
 
 const enhance = compose(
+  setDisplayName('Bar'),
   withProps(propsTransformer),
   setPropTypes({
     key2name: PropTypes.func,

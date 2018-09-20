@@ -6,15 +6,15 @@ import Table from '../components/Table';
 let table;
 let initialWrapper;
 const cells = _.times(9, _.constant(jest.fn()));
-describe('test Table', () => {
+describe('Table', () => {
   beforeAll(() => {
     table = mount(<Table col={3} cells={cells} />);
     initialWrapper = table;
   });
-  it('test throw', () => {
+  it('shoule be no throwerror', () => {
     expect(() => { mount(<Table col={3} cells={cells} />); }).not.toThrow();
   });
-  describe('test initially', () => {
+  describe('when initially', () => {
     it('length of cells should be correct', () => {
       expect(table.instance().props.cells.length).toBe(9);
     });
@@ -26,18 +26,18 @@ describe('test Table', () => {
       expect(table.state('width')).toBe(24 / 3);
       expect(_.countBy(table.state('isExpanded'), Boolean).false).toBe(9);
     });
-    describe('test render', () => {
-      it('should have nine Icons and nine Cols', () => {
+    describe('when render', () => {
+      it('component should have nine Icons and nine Cols', () => {
         expect(table.find('Icon').length).toBe(9);
         expect(table.find('Col').length).toBe(9);
       });
-      it('should have one Row', () => {
+      it('component should have one Row', () => {
         expect(table.find('Row').length).toBe(1);
       });
     });
   });
 
-  describe('test after first click one Icon', () => {
+  describe('when first click one Icon', () => {
     let preIsExpanded;
     let preAllState;
     let id;
@@ -66,7 +66,7 @@ describe('test Table', () => {
       expect(_.toNumber(element.key)).toBe(id);
     });
   });
-  describe('test after second click Icon', () => {
+  describe('when second click Icon', () => {
     beforeAll(() => {
       table.find('Icon').simulate('click');
     });
