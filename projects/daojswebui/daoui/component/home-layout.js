@@ -20,13 +20,17 @@ export default function HomeLayout(props) {
   return (
     <Layout style={{ flex: 1 }}>
       <Sider
-        trigger={null}
+        breakpoint="lg"
+        collapsedWidth="0"
+        onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
+        // trigger={null}
         width={280}
         style={{
           ...styles.bg,
           padding: '10px',
           display: 'flex',
           flexDirection: 'column',
+          zIndex: 1000,
         }}
       >
         {LeftComp}
