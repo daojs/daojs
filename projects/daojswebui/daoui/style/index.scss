@@ -63,7 +63,37 @@ body > #container {
   .card2:last-child {
     margin-bottom: 20px;
   }
+  .iconHamburger {
+    display: block;
+    position: relative;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    left: 95%;
+  }
 
+  .iconHamburger:before {
+      background: #777;
+      border-radius: 2px;
+      box-shadow: 0 6px 0 0 #777, 0 12px 0 0 #777;
+      content: "";
+      display: block;
+      height: 2px;
+      position: absolute;
+      width: 24px;
+      top: 18px;
+      right: 13px;
+  }
+  .ant-layout-sider-zero-width-trigger {
+    position: fixed;
+    right: 94%;
+    background: #00152900;
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .anticon-bars {
+    font-size: 28;
+  }
   .card3 {
     width: 300px !important;
     height: 130px !important;

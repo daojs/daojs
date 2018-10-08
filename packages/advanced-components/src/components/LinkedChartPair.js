@@ -101,7 +101,7 @@ export default class LinkedChartPair extends PureComponent {
     }));
     return (
       <div>
-        <Row>
+        <Row align="middle" type="flex">
           <Col span={12}>
             {chartTypeDictionary[chart0.type]({
               source: finalSource0,

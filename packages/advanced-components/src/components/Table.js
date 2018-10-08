@@ -47,7 +47,7 @@ export default class Table extends PureComponent {
     ));
     return (
       <div>
-        <Row>
+        <Row align="middle" type="flex">
           {finalCells}
         </Row>
       </div>
